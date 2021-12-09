@@ -26,11 +26,6 @@ module "db_subnet_group" {
   description     = var.db_subnet_group_description
   subnet_ids      = var.subnet_ids
 
-  vpc_id              = var.vpc_id
-  database_port       = var.database_port
-  security_group_ids  = var.security_group_ids
-  allowed_cidr_blocks = var.allowed_cidr_blocks
-
   tags = merge(var.tags, var.db_subnet_group_tags)
 }
 
