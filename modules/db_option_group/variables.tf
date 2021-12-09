@@ -36,18 +36,8 @@ variable "major_engine_version" {
 
 variable "options" {
   description = "A list of Options to apply"
-  type = list(object({
-    db_security_group_memberships  = list(string)
-    option_name                    = string
-    port                           = number
-    version                        = string
-    vpc_security_group_memberships = list(string)
-
-    option_settings = list(object({
-      name  = string
-      value = string
-    }))
-  }))
+  type        = any
+  default     = []
 }
 
 variable "timeouts" {
