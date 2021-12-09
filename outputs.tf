@@ -1,13 +1,3 @@
-output "enhanced_monitoring_iam_role_name" {
-  description = "The name of the monitoring role"
-  value       = module.db_instance.enhanced_monitoring_iam_role_name
-}
-
-output "enhanced_monitoring_iam_role_arn" {
-  description = "The Amazon Resource Name (ARN) specifying the monitoring role"
-  value       = module.db_instance.enhanced_monitoring_iam_role_arn
-}
-
 output "db_instance_address" {
   description = "The address of the RDS instance"
   value       = module.db_instance.db_instance_address
@@ -65,16 +55,6 @@ output "db_instance_password" {
   sensitive   = true
 }
 
-output "db_instance_domain" {
-  description = "The ID of the Directory Service Active Directory domain the instance is joined to"
-  value       = module.db_instance.db_instance_domain
-}
-
-output "db_instance_domain_iam_role_name" {
-  description = "The name of the IAM role to be used when making API calls to the Directory Service. "
-  value       = module.db_instance.db_instance_domain_iam_role_name
-}
-
 output "db_instance_port" {
   description = "The database port"
   value       = module.db_instance.db_instance_port
@@ -116,8 +96,3 @@ output "db_option_group_arn" {
   value       = module.db_option_group.db_option_group_arn
 }
 
-output "db_master_password" {
-  description = "The master password"
-  value       = module.db_instance.db_instance_master_password
-  sensitive   = true
-}
