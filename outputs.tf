@@ -49,12 +49,6 @@ output "db_instance_username" {
   sensitive   = true
 }
 
-output "db_instance_password" {
-  description = "The database password (this password may be old, because Terraform doesn't track it after initial creation)"
-  value       = module.db_instance.password
-  sensitive   = true
-}
-
 output "db_instance_port" {
   description = "The database port"
   value       = module.db_instance.db_instance_port
