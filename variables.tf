@@ -347,14 +347,11 @@ variable "family" {
 }
 
 variable "parameters" {
-  description = "A list of DB parameters to apply. Note that parameters may differ from a DB family to another"
-  type = list(object({
-    apply_method = string
-    name         = string
-    value        = string
-  }))
+  description = "A list of DB parameter maps to apply"
+  type        = list(map(string))
   default     = []
 }
+
 
 # DB option group
 variable "create_db_option_group" {
