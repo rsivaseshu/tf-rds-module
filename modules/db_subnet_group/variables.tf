@@ -33,25 +33,3 @@ variable "tags" {
   type        = map(string)
   default     = {}
 }
-
-variable "vpc_id" {
-  description = "VPC ID the DB instance will be created in"
-  type        = string
-}
-
-variable "security_group_ids" {
-  description = "The IDs of the security groups from which to allow `ingress` traffic to the DB instance"
-  type        = list(string)
-  default     = []
-}
-
-variable "allowed_cidr_blocks" {
-  description = "The whitelisted CIDRs which to allow `ingress` traffic to the DB instance"
-  type        = list(string)
-  default     = []
-}
-
-variable "database_port" {
-  description = "Database port (_e.g._ `3306` for `MySQL`). Used in the DB Security Group to allow access to the DB instance from the provided `security_group_ids`"
-  type        = number
-}
