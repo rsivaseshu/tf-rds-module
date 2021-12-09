@@ -1,5 +1,4 @@
 locals {
-  master_password      = var.create_db_instance && var.create_random_password ? random_password.master_password[0].result : var.password
   db_subnet_group_name = !var.cross_region_replica && var.replicate_source_db != null ? null : coalesce(var.db_subnet_group_name, module.db_subnet_group.db_subnet_group_id, var.identifier)
 
   parameter_group_name_id = var.create_db_parameter_group ? module.db_parameter_group.db_parameter_group_id : var.parameter_group_name
@@ -79,7 +78,7 @@ module "db_instance" {
 
   name                                = var.name
   username                            = var.username
-  password                            = local.master_password
+  password                            = var.password
   port                                = var.port
   iam_database_authentication_enabled = var.iam_database_authentication_enabled
 
